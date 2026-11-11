@@ -1,5 +1,6 @@
 package app;
 
+import app.config.DatabaseConnection;
 import app.repository.*;
 import app.service.*;
 import app.service.inputports.*;
@@ -9,6 +10,13 @@ import app.view.*;
 
 public class Application {
     public static void main(String[] args) {
+        System.out.println("Verificando conexión con la base de datos SALUD360...");
+        if (!DatabaseConnection.testConnection()) {
+            System.err.println("Aplicación detenida. Inicie MySQL en XAMPP e importe database/salud360.sql en phpMyAdmin.");
+            return;
+        }
+        System.out.println("Conexión con MariaDB establecida correctamente.\n");
+
         PacienteRepositoryPort pacienteRepository = new PacienteRepositoryImp();
         PacienteServiceInterface pacienteService = new PacienteServiceImp(pacienteRepository);
         PacienteView pacienteView = new PacienteView(pacienteService);

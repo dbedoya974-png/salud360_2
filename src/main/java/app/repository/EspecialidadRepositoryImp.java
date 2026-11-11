@@ -1,23 +1,12 @@
 package app.repository;
+
 import app.domain.Especialidad;
+import app.repository.jdbc.JdbcCrudRepository;
 import app.service.outputports.EspecialidadRepositoryPort;
-import java.util.ArrayList;
-import java.util.List;
-public class EspecialidadRepositoryImp implements EspecialidadRepositoryPort {
-    private final List<Especialidad> data = new ArrayList<>();
-    @Override public Especialidad create(Especialidad entity) { data.add(entity); return entity; }
-    @Override public List<Especialidad> selectAll() { return new ArrayList<>(data); }
-    @Override public Especialidad findById(int id) {
-        for (Especialidad e : data) { if (e.getIdEspecialidad() == id) return e; }
-        return null;
-    }
-    @Override public boolean update(Especialidad entity) {
-        for (int i=0;i<data.size();i++) {
-            if (data.get(i).getIdEspecialidad() == entity.getIdEspecialidad()) { data.set(i, entity); return true; }
-        }
-        return false;
-    }
-    @Override public boolean delete(int id) {
-        return data.removeIf(e -> e.getIdEspecialidad() == id);
+
+/** Repositorio persistente de Especialidad usando MariaDB/JDBC. */
+public class EspecialidadRepositoryImp extends JdbcCrudRepository<Especialidad> implements EspecialidadRepositoryPort {
+    public EspecialidadRepositoryImp() {
+        super(Especialidad.class, "especialidades", "idEspecialidad");
     }
 }

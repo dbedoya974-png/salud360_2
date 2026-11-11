@@ -70,3 +70,12 @@ Enlace GitHub: **PENDIENTE DE COMPLETAR**. El ZIP incluye el historial Git local
 ## Integrantes
 
 Los nombres no venían incluidos en el ZIP recibido. Completar los nombres reales en `docs/entrega_proyecto.pdf` y en el apartado de integrantes antes de entregar.
+
+
+## Base de datos MariaDB con XAMPP
+
+Salud360 utiliza MariaDB (incluido en XAMPP) mediante JDBC. La aplicación ya no guarda los registros en listas temporales: los 12 repositorios CRUD trabajan con la base de datos `salud360`.
+
+**Configuración inicial:** importa `database/salud360.sql` desde phpMyAdmin y recarga el proyecto Maven en IntelliJ. XAMPP suele usar `root` sin contraseña en instalaciones locales; si tu instalación tiene otra contraseña, crea `src/main/resources/db.properties` a partir del archivo `db.properties.example`. Consulta `docs/CONEXION_XAMPP_MARIADB.md` para el procedimiento completo.
+
+El script SQL crea tablas vacías; no incluye información clínica ficticia. Para crear profesionales, primero registra una especialidad y luego el profesional asociado.

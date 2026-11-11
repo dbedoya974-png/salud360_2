@@ -2,3 +2,6 @@ target/
 .idea/
 *.iml
 .vscode/
+
+# Credenciales locales de MariaDB (no versionar)
+src/main/resources/db.properties
