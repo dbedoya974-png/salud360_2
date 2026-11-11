@@ -1,6 +1,6 @@
 # Historial de commits incluido en esta entrega
 
-El repositorio Git local conserva el historial completo. Los commits de trabajo y documentación registrados hasta el cierre de esta versión son:
+El repositorio Git local conserva el historial completo de trabajo. Los commits principales son:
 
 | Commit | Tipo | Descripción |
 |---|---|---|
@@ -10,7 +10,11 @@ El repositorio Git local conserva el historial completo. Los commits de trabajo 
 | `ec14dc0` | docs | Anexar informe PDF e historial de commits |
 | `1a95259` | docs | Completar historial en anexo PDF |
 | `dbbfaf6` | docs | Actualizar PDF con historial Git completo |
+| `d1c2d28` | docs | Registrar historial Git final en documentación |
+| `8d2a42d` | feat | Integrar persistencia MariaDB con JDBC en los 12 módulos |
 
-El PDF incluye un anexo con el historial registrado hasta el corte de su generación. Para consultar siempre el historial íntegro y más reciente, ejecutar `git log --oneline` desde esta carpeta.
+La integración con MariaDB reemplaza los repositorios temporales basados en `ArrayList` por repositorios JDBC. El script `database/salud360.sql` crea las 12 tablas y sus relaciones.
 
-**Importante:** estos son commits locales incluidos en el ZIP. No se afirma que estén publicados en GitHub. Para publicarlos, crear un repositorio remoto, agregar su URL con `git remote add origin URL`, y ejecutar `git push -u origin master` (o cambiar la rama según la configuración del repositorio remoto).
+Para consultar el historial íntegro y actualizado, ejecutar `git log --oneline` desde la carpeta `Salud360`.
+
+**Importante:** los commits están incluidos en el repositorio Git local del ZIP. No se afirma que estén publicados en GitHub. Para publicarlos, agregar el repositorio remoto y ejecutar `git push -u origin master` (o la rama principal que corresponda).
