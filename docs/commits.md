@@ -11,3 +11,4 @@ El repositorio Git local conserva estos commits. Los identificadores son válido
 Para consultar el historial desde una terminal, ejecutar `git log --oneline` en la carpeta `Salud360`.
 
 **Importante:** estos son commits locales. No se afirma que estén publicados en GitHub. Para publicarlos, crear un repositorio remoto, agregar su URL con `git remote add origin URL`, y ejecutar `git push -u origin master` (o cambiar la rama según la configuración del repositorio remoto).
+| `ec14dc0` | docs | Anexar informe PDF e historial de commits |
