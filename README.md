@@ -79,3 +79,10 @@ Salud360 utiliza MariaDB (incluido en XAMPP) mediante JDBC. La aplicación ya no
 **Configuración inicial:** importa `database/salud360.sql` desde phpMyAdmin y recarga el proyecto Maven en IntelliJ. XAMPP suele usar `root` sin contraseña en instalaciones locales; si tu instalación tiene otra contraseña, crea `src/main/resources/db.properties` a partir del archivo `db.properties.example`. Consulta `docs/CONEXION_XAMPP_MARIADB.md` para el procedimiento completo.
 
 El script SQL crea tablas vacías; no incluye información clínica ficticia. Para crear profesionales, primero registra una especialidad y luego el profesional asociado.
+
+
+## Datos ficticios para pruebas (opcional)
+
+El archivo `database/datos_prueba.sql` contiene un conjunto pequeño de registros completamente inventados para probar las relaciones y los modulos. Importelo solamente despues de `database/salud360.sql`. Los registros usan identificadores `900001` y documentos con prefijo `TEST`; no representan pacientes ni profesionales reales. Los valores de alergias, diagnosticos, tratamientos y signos vitales son marcadores de prueba sin valor clinico. No deben utilizarse para orientar decisiones medicas.
+
+Si no desea cargar datos de demostracion, omita ese segundo archivo y registre informacion de prueba desde la aplicacion.
